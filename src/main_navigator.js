@@ -4,10 +4,12 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Icon } from "@react-native-material/core";
 
 import HomeScreen from "./home/view";
-import OfferListScreen from "./offer-list/view";
 import CoinListScreenBad from "./coin-list/view-bad";
 import CoinListScreenGood from "./coin-list/view-good";
 import CoinListScreenMobile from "./coin-list/view-mobile";
+import OfferListScreenBad from "./offer-list/view-bad";
+import OfferListScreenMobile from "./offer-list/view-mobile";
+import OfferListScreenGood from "./offer-list/view-good";
 
 const Tab = createBottomTabNavigator();
 
@@ -25,7 +27,9 @@ const MainNavigator = () => {
 				<Tab.Screen name="Coin Bad" component={CoinListScreenBad} />
 				<Tab.Screen name="Coin Good" component={CoinListScreenGood} />
 				<Tab.Screen name="Coin Mobile" component={CoinListScreenMobile} />
-				<Tab.Screen name="List 4" component={OfferListScreen} />
+				<Tab.Screen name="Offers Bad" component={OfferListScreenBad} />
+				<Tab.Screen name="Offers Good" component={OfferListScreenGood} />
+				<Tab.Screen name="Offers Mobile" component={OfferListScreenMobile} />
 			</Tab.Navigator>
 		</NavigationContainer>
 	);

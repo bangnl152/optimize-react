@@ -17,6 +17,8 @@ const CoinItem = ({ coin }) => {
 };
 
 const CoinListScreenMobile = () => {
+	let { width } = Dimensions.get("window");
+
 	const [dataProvider, setDataProvider] = useState(
 		new DataProvider((r1, r2) => {
 			return r1 !== r2;
@@ -26,7 +28,6 @@ const CoinListScreenMobile = () => {
 		new LayoutProvider(
 			(_) => "item",
 			(_, dim) => {
-				let { width } = Dimensions.get("window");
 				dim.width = width;
 				dim.height = 70;
 			},

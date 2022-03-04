@@ -10,10 +10,9 @@ function* handleFetchOffers() {
 		lastId++;
 		return {
 			id: lastId,
-			currency: sample(exchangeRateKeys),
+			coin: sample(exchangeRateKeys),
 			username: `bangnguyen${lastId}`,
 			amount: random(1, 10000),
-			price: random(10000, true),
 		};
 	});
 	yield put(updateOffers({ offers }));
@@ -24,10 +23,9 @@ function* handleCreateOffer() {
 		lastId++;
 		return {
 			id: lastId,
-			currency: sample(exchangeRateKeys),
+			coin: sample(exchangeRateKeys),
 			username: `bangnguyen${lastId}`,
 			amount: random(1, 10000),
-			price: random(10000, true),
 		};
 	});
 	yield put(updateOffers({ offers, newOffer: true }));
