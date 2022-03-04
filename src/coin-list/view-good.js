@@ -7,13 +7,13 @@ import { exchangeRateKeys } from "../exchange-rates/sagas";
 import { useExchangeRate } from "../exchange-rates/hooks";
 
 const CoinItem = ({ coin }) => {
-	console.log("Render CoinItemGood", coin, new Date().toISOString());
+	console.log(new Date().toLocaleTimeString(), "Render CoinItemGood", coin);
 	const exchangeRate = useExchangeRate(coin);
 	return <ListItem title={coin} secondaryText={`${exchangeRate}`} />;
 };
 
 const CoinListScreenGood = () => {
-	console.log("Render CoinListScreenGood", new Date().toISOString());
+	console.log(new Date().toLocaleTimeString(), "Render CoinListScreenGood");
 	return (
 		<ScrollView>
 			{exchangeRateKeys.map((coin, index) => (

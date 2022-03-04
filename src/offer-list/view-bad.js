@@ -6,7 +6,7 @@ import { useOfferIds, useOfferMap } from "./hooks";
 import { useExchangeRates } from "../exchange-rates/hooks";
 
 const OfferItem = ({ id, coin, amount, price }) => {
-	console.log("Render OfferItemBad", id, coin, new Date().toISOString());
+	console.log(new Date().toLocaleTimeString(), "Render OfferItemBad", id, coin);
 	return (
 		<View key={id}>
 			<VStack m={4} spacing={2}>
@@ -25,13 +25,13 @@ const OfferListScreenBad = () => {
 	const offerIds = useOfferIds();
 	const offerMap = useOfferMap();
 
-	console.log("Render OfferListScreenBad", new Date().toISOString());
+	console.log(new Date().toLocaleTimeString(), "Render OfferListScreenBad");
 	return (
 		<ScrollView>
 			{offerIds.map((offerId) => {
 				const offer = offerMap[offerId];
 				const price = offer.amount * exchangeRates[offer.coin];
-				return <OfferItem {...offer} price={price} />;
+				return <OfferItem key={offer.id} {...offer} price={price} />;
 			})}
 		</ScrollView>
 	);

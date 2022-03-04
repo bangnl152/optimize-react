@@ -8,7 +8,7 @@ const Price = ({ amount, coin }) => {
 	const exchangeRate = useExchangeRate(coin);
 	const price = amount * exchangeRate;
 
-	console.log("Render OfferPriceGood", coin, new Date().toISOString());
+	console.log(new Date().toLocaleTimeString(), "Render OfferPriceGood", coin);
 
 	return <Text>Price: {price}</Text>;
 };
@@ -16,7 +16,12 @@ const Price = ({ amount, coin }) => {
 const OfferItem = ({ id }) => {
 	const { coin, amount } = useOffer(id);
 
-	console.log("Render OfferItemGood", id, coin, new Date().toISOString());
+	console.log(
+		"Render OfferItemGood",
+		id,
+		coin,
+		new Date().toLocaleTimeString(),
+	);
 
 	return (
 		<View key={id}>
@@ -34,7 +39,7 @@ const OfferItem = ({ id }) => {
 const OfferListScreenGood = () => {
 	const offerIds = useOfferIds();
 
-	console.log("Render OfferListScreenGood", new Date().toISOString());
+	console.log(new Date().toLocaleTimeString(), "Render OfferListScreenGood");
 
 	return (
 		<ScrollView>

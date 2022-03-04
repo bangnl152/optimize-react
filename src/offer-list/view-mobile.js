@@ -13,7 +13,7 @@ const Price = ({ amount, coin }) => {
 	const exchangeRate = useExchangeRate(coin);
 	const price = amount * exchangeRate;
 
-	console.log("Render OfferPriceMobile", coin, new Date().toISOString());
+	console.log(new Date().toLocaleTimeString(), "Render OfferPriceMobile", coin);
 
 	return <Text>Price: {price}</Text>;
 };
@@ -21,7 +21,12 @@ const Price = ({ amount, coin }) => {
 const OfferItem = ({ id }) => {
 	const { coin, amount } = useOffer(id);
 
-	console.log("Render OfferItemMobile", id, coin, new Date().toISOString());
+	console.log(
+		"Render OfferItemMobile",
+		id,
+		coin,
+		new Date().toLocaleTimeString(),
+	);
 
 	return (
 		<View key={id}>
@@ -63,7 +68,7 @@ const OfferListScreenMobile = () => {
 		setDataProvider(dataProvider.cloneWithRows(offerIds));
 	}, [offerIds]);
 
-	console.log("Render OfferListScreenMobile", new Date().toISOString());
+	console.log(new Date().toLocaleTimeString(), "Render OfferListScreenMobile");
 
 	return (
 		<RecyclerListView

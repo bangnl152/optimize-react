@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Stack, Button, Text } from "@react-native-material/core";
 
-import { createOffer, fetchOffers } from "../offer-list/actions";
+import { fetchOffers } from "../offer-list/actions";
 import { fetchExchangeRates } from "../exchange-rates/actions";
 
 import { useOffersCount } from "../offer-list/hooks";
@@ -19,7 +19,6 @@ const HomeScreen = () => {
 	return (
 		<Stack fill center spacing={4}>
 			<Text>Offers: {offersCount}</Text>
-			<Button title="Add Offers" onPress={() => dispatch(createOffer())} />
 			<Button title="Fetch Offers" onPress={() => dispatch(fetchOffers())} />
 			<Button
 				title="Fetch Exchange Rates"

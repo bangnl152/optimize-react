@@ -11,7 +11,7 @@ import {
 import { Dimensions } from "react-native";
 
 const CoinItem = ({ coin }) => {
-	console.log("Render CoinItemMobile", coin, new Date().toISOString());
+	console.log(new Date().toLocaleTimeString(), "Render CoinItemMobile", coin);
 	const exchangeRate = useExchangeRate(coin);
 	return <ListItem title={coin} secondaryText={`${exchangeRate}`} />;
 };
@@ -42,7 +42,7 @@ const CoinListScreenMobile = () => {
 		setDataProvider(dataProvider.cloneWithRows(exchangeRateKeys));
 	}, []);
 
-	console.log("Render CoinListScreenMobile", new Date().toISOString());
+	console.log(new Date().toLocaleTimeString(), "Render CoinListScreenMobile");
 	return (
 		<RecyclerListView
 			layoutProvider={layoutProvider}

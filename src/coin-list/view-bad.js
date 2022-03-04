@@ -6,13 +6,13 @@ import { ListItem } from "@react-native-material/core";
 import { useExchangeRates } from "../exchange-rates/hooks";
 
 const CoinItem = ({ coin, exchangeRate }) => {
-	console.log("Render CoinItemBad", coin, new Date().toISOString());
+	console.log(new Date().toLocaleTimeString(), "Render CoinItemBad", coin);
 	return <ListItem title={coin} secondaryText={`${exchangeRate}`} />;
 };
 
 const CoinListScreenBad = () => {
 	const exchangeRates = useExchangeRates();
-	console.log("Render CoinListScreenBad", new Date().toISOString());
+	console.log(new Date().toLocaleTimeString(), "Render CoinListScreenBad");
 	return (
 		<ScrollView>
 			{keysIn(exchangeRates).map((key, index) => (
